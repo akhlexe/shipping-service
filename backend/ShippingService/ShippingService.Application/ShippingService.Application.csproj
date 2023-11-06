@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ShippingService.Domain\ShippingService.Domain.csproj" />
+    <ProjectReference Include="..\ShippingService.Infrastructure\ShippingService.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>
