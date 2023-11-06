@@ -1,0 +1,9 @@
+version: '3.4'
+
+services:
+  shippingservice.api:
+    image: ${DOCKER_REGISTRY-}shippingserviceapi
+    container_name: shipping-service-api
+    build:
+      context: .
+      dockerfile: ShippingService.Api/Dockerfile
