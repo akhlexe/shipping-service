@@ -7,3 +7,14 @@ services:
     build:
       context: .
       dockerfile: ShippingService.Api/Dockerfile
+    depends_on:
+        - database
+
+  database:
+    image: mcr.microsoft.com/mssql/server
+    container_name: database
+    environment:
+        SA_PASSWORD: "${SA_PASSWORD}"
+        ACCEPT_EULA: Y
+    ports:
+      - "1433:1433"
