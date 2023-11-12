@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MediatR" Version="12.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\ShippingService.Domain\ShippingService.Domain.csproj" />
     <ProjectReference Include="..\ShippingService.Infrastructure\ShippingService.Infrastructure.csproj" />
   </ItemGroup>

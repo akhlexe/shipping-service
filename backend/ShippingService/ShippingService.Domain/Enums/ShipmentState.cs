@@ -1,9 +1,9 @@
 ﻿namespace ShippingService.Domain.Enums
 {
-    public enum FlightStateEnum
+    public enum ShipmentState
     {
         SCHEDULED = 0,
         ON_ROUTE = 1,
-        LANDED = 2,
+        DELIVERED = 2
     }
 }

@@ -8,13 +8,13 @@ namespace ShippingService.Domain.Entities
 
         public int DepartureAirportId { get; set; }
 
-        public DateTime DepartureTime { get; set; }
-
         public int ArrivalAirportId { get; set; }
+
+        public DateTime DepartureTime { get; set; }
         
         public DateTime ArrivalTime { get; set; }
 
-        public FlightStateEnum FlightState { get; set; }
+        public FlightState FlightState { get; set; }
 
         public Airport DepartureAirport { get; set; }
 
