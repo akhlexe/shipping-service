@@ -14,7 +14,7 @@ namespace ShippingService.Domain.Entities
 
         public int ArrivalAirportId { get; set; }
 
-        public int ShipmentFlightId { get; set; }
+        public int? ShipmentFlightId { get; set; }
 
         public DateTime? DeliveredOn { get; set; } 
 
