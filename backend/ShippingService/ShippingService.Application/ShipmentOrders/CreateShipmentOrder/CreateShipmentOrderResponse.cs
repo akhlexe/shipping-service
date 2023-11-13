@@ -2,5 +2,6 @@
 {
     public class CreateShipmentOrderResponse
     {
+        public int Id { get; set; }
     }
 }
