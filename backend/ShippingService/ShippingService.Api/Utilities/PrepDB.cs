@@ -11,6 +11,8 @@ namespace ShippingService.Api.Utilities
             using var context = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
 
             context.Database.Migrate();
+
+            DataSeeder.SeedData(builder.ApplicationServices);
         }
     }
 }

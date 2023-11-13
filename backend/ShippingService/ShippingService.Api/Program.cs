@@ -12,7 +12,7 @@ builder.Services
 var app = builder.Build();
 
 PrepDB.Migrate(app);
-DataSeeder.SeedData(app.Services);
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
