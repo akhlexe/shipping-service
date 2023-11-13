@@ -1,0 +1,8 @@
+nav {
+    padding: 1em;
+}
+
+nav a{
+    font-size: 1em;
+    transition: none;
+}
