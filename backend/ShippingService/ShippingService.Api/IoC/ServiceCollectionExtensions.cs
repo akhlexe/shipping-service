@@ -23,5 +23,20 @@ namespace ShippingService.Api.IoC
 
             return services;
         }
+
+        public static IServiceCollection AddCustomCors(this IServiceCollection services)
+        {
+            services.AddCors(c =>
+            {
+                c.AddPolicy("AllowOrigin", options =>
+                {
+                    options.AllowAnyOrigin()
+                        .AllowAnyHeader()
+                        .AllowAnyMethod();
+                });
+            });
+
+            return services;
+        }
     }
 }

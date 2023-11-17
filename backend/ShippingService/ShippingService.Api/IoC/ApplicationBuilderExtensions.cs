@@ -38,5 +38,11 @@ namespace ShippingService.Api.IoC
             app.MapControllers();
             return app;
         }
+
+        public static WebApplication UseCors(this WebApplication app)
+        {
+            app.UseCors("AllowOrigin");
+            return app;
+        }
     }
 }

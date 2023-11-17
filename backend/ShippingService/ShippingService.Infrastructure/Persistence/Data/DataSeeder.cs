@@ -11,8 +11,6 @@ namespace ShippingService.Infrastructure.Persistence.Data
             {
                 ApplicationDbContext? context = serviceScope.ServiceProvider.GetService<ApplicationDbContext>();
 
-                context.Database.EnsureCreated();
-
                 if (!context.Airports.Any())
                 {
                     new AirportSeeder(context).SeedData();

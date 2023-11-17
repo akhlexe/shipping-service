@@ -6,6 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services
     .AddInfrastructureServices(builder.Configuration)
     .AddMediatRService()
+    .AddCustomCors()
     .AddApiServices();
 
 var app = builder.Build();
@@ -15,4 +16,5 @@ app.InitializeDatabase()
     .AddHttpsRedirection()
     .AddAuthorization()
     .AddControllers()
+    .UseCors()
     .Run();

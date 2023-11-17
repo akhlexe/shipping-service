@@ -1,21 +1,21 @@
-version: '3.4'
+version: "3.4"
 
 services:
-  shippingservice.api:
-    image: ${DOCKER_REGISTRY-}shippingserviceapi
+  shipping-service-api:
+    image: ${DOCKER_REGISTRY-}shipping-service-api
     container_name: shipping-service-api
     build:
       context: .
       dockerfile: ShippingService.Api/Dockerfile
     depends_on:
-        - database
+      - database
 
   database:
     image: mcr.microsoft.com/mssql/server:2022-latest
     container_name: database
     environment:
-        SA_PASSWORD: "Abcd1234!"
-        ACCEPT_EULA: Y
+      SA_PASSWORD: "Abcd1234!"
+      ACCEPT_EULA: Y
     ports:
       - "1433:1433"
     volumes:

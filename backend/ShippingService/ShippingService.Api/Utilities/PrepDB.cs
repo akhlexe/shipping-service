@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 using ShippingService.Infrastructure.Persistence.Data;
 
 namespace ShippingService.Api.Utilities
@@ -7,12 +8,26 @@ namespace ShippingService.Api.Utilities
     {
         public static void Migrate(IApplicationBuilder builder)
         {
+
             using var scope = builder.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope();
             using var context = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
 
-            context.Database.Migrate();
+            bool isProcessing = true;
 
-            DataSeeder.SeedData(builder.ApplicationServices);
+            while(isProcessing)
+            {
+                try
+                {
+                    context.Database.Migrate();
+                    DataSeeder.SeedData(builder.ApplicationServices);
+                    break;
+                }
+                catch(SqlException ex)
+                {
+                    Task.Delay(TimeSpan.FromSeconds(5)).Wait();
+                    Console.WriteLine(ex.Message);
+                }
+            }
         }
     }
 }

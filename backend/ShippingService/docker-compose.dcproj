@@ -6,7 +6,7 @@
     <ProjectGuid>87c234bc-9040-4eac-8726-ad62dbbe6bbe</ProjectGuid>
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
     <DockerServiceUrl>{Scheme}://localhost:{ServicePort}/swagger</DockerServiceUrl>
-    <DockerServiceName>shippingservice.api</DockerServiceName>
+    <DockerServiceName>shipping-service-api</DockerServiceName>
 	<DockerComposeProjectName>shipping-service</DockerComposeProjectName>
   </PropertyGroup>
   <ItemGroup>
