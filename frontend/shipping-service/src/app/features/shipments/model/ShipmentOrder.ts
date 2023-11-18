@@ -3,4 +3,5 @@ export interface ShipmentOrder {
   origin: number;
   destination: number;
   message: string;
+  status: string;
 }
