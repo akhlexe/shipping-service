@@ -2,7 +2,7 @@
 using ShippingService.Domain.Entities;
 using ShippingService.Infrastructure.Persistence.Data;
 
-namespace ShippingService.Application.ShipmentOrders.CreateShipmentOrder
+namespace ShippingService.Application.ShipmentOrders.Commands.CreateShipmentOrder
 {
     public class CreateShipmentOrderRequest : IRequest<CreateShipmentOrderResponse>
     {

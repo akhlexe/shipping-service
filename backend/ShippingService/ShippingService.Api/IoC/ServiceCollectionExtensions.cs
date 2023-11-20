@@ -1,4 +1,7 @@
-﻿using ShippingService.Application;
+﻿using Microsoft.Extensions.DependencyInjection;
+using ShippingService.Application;
+using ShippingService.Application.ShipmentOrders.Queries.GetShipmentOrders;
+using System.Reflection;
 
 namespace ShippingService.Api.IoC
 {
@@ -17,8 +20,7 @@ namespace ShippingService.Api.IoC
         {
             services.AddMediatR(config =>
             {
-                config.RegisterServicesFromAssemblies(typeof(Program).Assembly);
-                config.RegisterServicesFromAssemblies(typeof(ApplicationAssemblyMarkerType).Assembly);
+                config.RegisterServicesFromAssemblies(typeof(Program).Assembly, typeof(ApplicationAssemblyMarker).Assembly);
             });
 
             return services;
@@ -36,6 +38,12 @@ namespace ShippingService.Api.IoC
                 });
             });
 
+            return services;
+        }
+
+        public static IServiceCollection AddAutoMapper(this IServiceCollection services)
+        {
+            services.AddAutoMapper(typeof(Program).Assembly, typeof(ApplicationAssemblyMarker).Assembly);
             return services;
         }
     }

@@ -1,4 +1,4 @@
-﻿namespace ShippingService.Application.ShipmentOrders.CreateShipmentOrder
+﻿namespace ShippingService.Application.ShipmentOrders.Commands.CreateShipmentOrder
 {
     public class CreateShipmentOrderResponse
     {

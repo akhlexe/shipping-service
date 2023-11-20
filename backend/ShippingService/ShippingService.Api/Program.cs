@@ -7,6 +7,7 @@ builder.Services
     .AddInfrastructureServices(builder.Configuration)
     .AddMediatRService()
     .AddCustomCors()
+    .AddAutoMapper()
     .AddApiServices();
 
 var app = builder.Build();

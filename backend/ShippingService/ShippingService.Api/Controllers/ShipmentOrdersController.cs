@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using ShippingService.Application.ShipmentOrders.CreateShipmentOrder;
+using ShippingService.Application.ShipmentOrders.Commands.CreateShipmentOrder;
+using ShippingService.Application.ShipmentOrders.Queries.GetShipmentOrders;
 
 namespace ShippingService.Api.Controllers
 {
@@ -10,6 +11,13 @@ namespace ShippingService.Api.Controllers
             [FromBody] CreateShipmentOrderRequest request)
         {
             CreateShipmentOrderResponse response = await Mediator.Send(request);
+            return Ok(response);
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<ShipmentOrderDto>>> GetShipmentOrders()
+        {
+            IEnumerable<ShipmentOrderDto> response = await Mediator.Send(new GetShipmentOrderRequest());
             return Ok(response);
         }
     }
